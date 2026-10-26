@@ -19,8 +19,82 @@ header { background:var(--cream); position:sticky; top:0; z-index:10; border-bot
 .hero { display:grid; grid-template-columns:1.1fr 0.9fr; gap:20px; align-items:center; padding:50px 0; }
 .hero h1 { font-size:48px; line-height:1.1; margin:0; color:var(--green); }
 .hero p { color:var(--muted); max-width:520px; }
-.hero img { width:100%; border-radius:20px; object-fit:cover; height:380px; box-shadow:0 8px 30px rgba(0,0,0,0.1); }
+.hero img { width:100%; border-radius:20px; object-fit:cover; height:380px; }
 .section { padding:60px 0; }
 .section h2 { text-align:center; color:var(--green); font-size:32px; margin:0; }
 .section .sub { text-align:center; color:var(--muted); margin-top:6px; }
-.cards { display:flex; gap:22px; flex-wrap
+.cards { display:flex; gap:22px; flex-wrap:wrap; justify-content:center; margin-top:30px; }
+.card { width:320px; background:white; border-radius:18px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.08); }
+.card img { width:100%; height:210px; object-fit:cover; display:block; }
+.card-body { padding:16px; }
+.card-body h3 { margin:0 0 6px; color:var(--green); }
+.card-body p { margin:0; color:var(--muted); font-size:14px; }
+.card-body .meta { margin-top:10px; display:flex; justify-content:space-between; align-items:center; }
+.tag { background:#fff1e6; color:var(--orange); padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700; }
+footer { background:var(--green); color:#dbe8df; padding:30px 0; text-align:center; margin-top:40px; }
+@media(max-width:800px){ .hero{ grid-template-columns:1fr; } .hero h1{ font-size:36px; } }
+</style>
+</head>
+<body>
+<header>
+<div class="wrap nav">
+<div class="logo">Foodie Corner</div>
+<div class="menu">
+<a href="#home">Home</a>
+<a href="#recipes">Recipes</a>
+<a href="#about">About</a>
+</div>
+<a class="btn" href="#recipes">Explore</a>
+</div>
+</header>
+<div class="wrap hero" id="home">
+<div>
+<p style="color:var(--orange); font-weight:800;">MAKE EVERY MEAL DELICIOUS</p>
+<h1>Easy, Tasty Recipes for Everyday Life</h1>
+<p>Discover quick meals, healthy salads, and sweet treats made with love.</p>
+<br>
+<a class="btn" href="#recipes">Explore Recipes</a>
+</div>
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800" alt="Healthy Food">
+</div>
+<section class="section" id="recipes" style="background:white;">
+<div class="wrap">
+<h2>Our Top Recipes</h2>
+<p class="sub">Real photos, handpicked for you</p>
+<div class="cards">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600" alt="Biryani">
+<div class="card-body"><h3>Chicken Biryani</h3><p>Spicy, aromatic and full of flavor. Ready in 45 mins.</p><div class="meta"><span class="tag">45 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600" alt="Pasta">
+<div class="card-body"><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta with mushrooms.</p><div class="meta"><span class="tag">20 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600" alt="Salad">
+<div class="card-body"><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon dressing.</p><div class="meta"><span class="tag">10 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600" alt="Cake">
+<div class="card-body"><h3>Chocolate Cake</h3><p>Soft, moist chocolate cake.</p><div class="meta"><span class="tag">60 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600" alt="Paratha">
+<div class="card-body"><h3>Aloo Paratha</h3><p>Desi style stuffed paratha.</p><div class="meta"><span class="tag">25 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600" alt="Pancakes">
+<div class="card-body"><h3>Fluffy Pancakes</h3><p>Golden pancakes with honey.</p><div class="meta"><span class="tag">15 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="about">
+<div class="wrap" style="text-align:center; max-width:700px;">
+<h2>About Foodie Corner</h2>
+<p style="color:var(--muted);">This website is made with love by Maha. Simple recipes anyone can cook at home.</p>
+</div>
+</section>
+<footer><div class="wrap"><p>© 2026 Foodie Corner — Made by Maharulnisa65</p></div></footer>
+</body>
+</html>
