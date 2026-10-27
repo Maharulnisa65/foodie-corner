@@ -1,1 +1,58 @@
-content://com.google.android.apps.nbu.files.provider/2/1000001559
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foodie Corner</title>
+<style>
+body{margin:0;font-family:Arial;background:#fffff1;color:#234d3c}
+.wrap{width:92%;max-width:1100px;margin:auto}
+header{background:#fffff1;border-bottom:1px solid #eee;position:sticky;top:0}
+.nav{display:flex;justify-content:space-between;padding:14px 0}
+.logo{font-weight:900;font-size:22px}
+.btn{background:#f28a45;color:#fff;padding:10px 18px;border-radius:20px;border:none;font-weight:700;text-decoration:none}
+.hero{display:flex;gap:20px;align-items:center;padding:40px 0;flex-wrap:wrap}
+.hero h1{font-size:40px;line-height:1.1}
+.hero img{width:100%;max-width:500px;height:380px;object-fit:cover;border-radius:20px}
+.cards{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;padding:40px 0;background:#fff}
+.card{width:310px;background:#fff;border-radius:18px;border:1px solid #eee;overflow:hidden}
+.card img{width:100%;height:200px;object-fit:cover}
+.card-body{padding:14px}
+.tag{background:#ffefe6;color:#f28a45;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+footer{background:#234d3c;color:#fff;text-align:center;padding:25px;margin-top:30px}
+#pop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:99}
+#pop .box{background:#fff;max-width:400px;margin:100px auto;padding:20px;border-radius:15px}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><div class="logo">🍴 Foodie Corner</div><div><a class="btn" href="#recipes">Explore</a></div></div></header>
+
+<div class="wrap hero">
+<div style="flex:1;min-width:280px">
+<p style="color:#f28a45;font-weight:800">MAKE EVERY MEAL DELICIOUS</p>
+<h1>Simple, Fresh & Tasty Recipes</h1>
+<a class="btn" href="#recipes">View Recipes</a>
+</div>
+<img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800&q=80&auto=format&fit=crop" style="flex:1;min-width:280px">
+</div>
+
+<div id="recipes" class="cards wrap">
+<div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">20 MIN</span><h3>Creamy White Pasta</h3><button class="btn" onclick="showR('Creamy White Pasta')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">15 MIN</span><h3>Cheese Pizza</h3><button class="btn" onclick="showR('Cheese Pizza')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">10 MIN</span><h3>Fresh Salad</h3><button class="btn" onclick="showR('Fresh Salad')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">10 MIN</span><h3>Berry Dessert</h3><button class="btn" onclick="showR('Berry Dessert')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">25 MIN</span><h3>Veggie Sandwich</h3><button class="btn" onclick="showR('Veggie Sandwich')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">15 MIN</span><h3>Pancakes</h3><button class="btn" onclick="showR('Pancakes')">View Recipe</button></div></div>
+</div>
+
+<footer><p>© 2026 Foodie Corner</p></footer>
+
+<div id="pop" onclick="hideR()"><div class="box" onclick="event.stopPropagation()"><h2 id="rt"></h2><p id="rd"></p><button class="btn" onclick="hideR()">Close</button></div></div>
+
+<script>
+function showR(n){document.getElementById('rt').innerText=n;document.getElementById('rd').innerText=n+' recipe is ready! Ingredients and steps will be here.';document.getElementById('pop').style.display='block';}
+function hideR(){document.getElementById('pop').style.display='none';}
+</script>
+</body>
+</html>
