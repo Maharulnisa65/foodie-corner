@@ -30,12 +30,10 @@ footer a{color:#ffdab3;text-decoration:none;margin:0 8px}
 </head>
 <body>
 <header><div class="wrap nav"><div class="logo">🍴 Foodie Corner</div><div class="menu"><a href="#">Home</a><a href="#recipes">Recipes</a><a class="btn" href="#recipes">Explore</a></div></div></header>
-
 <div class="wrap hero">
 <div class="hero-left"><p style="color:#f28a45;font-weight:800">MAKE EVERY MEAL DELICIOUS</p><h1>Simple, Fresh & Tasty Recipes</h1><a class="btn" href="#recipes">Explore Recipes</a></div>
 <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800&q=80&auto=format&fit=crop" alt="hero">
 </div>
-
 <section class="section" id="recipes"><div class="wrap"><h2 style="text-align:center;color:#234d3c">Our Top Recipes</h2><div class="cards">
 <div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">20 min</span><h3>Creamy White Pasta</h3><button class="btn" onclick="openR('Creamy White Pasta','20 min','Pasta 200g, Milk 1 cup, Cheese 50g')">View Recipe</button></div></div>
 <div class="card"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">15 min</span><h3>Cheese Pizza</h3><button class="btn" onclick="openR('Cheese Pizza','15 min','Pizza base, Cheese, Sauce, Bake 10 min')">View Recipe</button></div></div>
@@ -44,77 +42,11 @@ footer a{color:#ffdab3;text-decoration:none;margin:0 8px}
 <div class="card"><img src="https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">25 min</span><h3>Veggie Sandwich</h3><button class="btn" onclick="openR('Veggie Sandwich','25 min','Bread, Veggies, Cheese')">View Recipe</button></div></div>
 <div class="card"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">15 min</span><h3>Fluffy Pancakes</h3><button class="btn" onclick="openR('Fluffy Pancakes','15 min','Flour, Milk, Egg, Honey')">View Recipe</button></div></div>
 </div></div></section>
-
 <footer><div class="wrap"><p>© 2026 Foodie Corner</p><p><a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p></div></footer>
-
 <div id="recipeBox"><div class="inner"><span style="position:absolute;top:10px;right:15px;font-size:28px;cursor:pointer" onclick="closeR()">&times;</span><h2 id="rTitle"></h2><p id="rTime" class="tag"></p><p id="rDesc" style="background:#fffff1;padding:15px;border-radius:12px"></p></div></div>
-
-<script>
-function openR(t,ti,d){document.getElementById('rTitle').innerText=t;document.getElementById('rTime').innerText=ti;document.getElementById('rDesc').innerText=d;document.getElementById('recipeBox').style.display='block';}
-function closeR(){document.getElementById('recipeBox').style.display='none';}
-</script>
-</body><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foodie Corner</title>
-<style>
-body{margin:0;font-family:Arial,sans-serif;background:#fffff1}
-.wrap{width:92%;max-width:1150px;margin:auto}
-header{background:#fffff1;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
-.logo{font-weight:800;color:#234d3c;font-size:22px}
-.menu a{margin-left:16px;text-decoration:none;color:#68766a;font-weight:600}
-.btn{background:#f28a45;color:white;padding:10px 18px;border-radius:24px;font-weight:700;border:none;cursor:pointer;display:inline-block;text-decoration:none}
-.hero{display:flex;gap:30px;align-items:center;padding:40px 0;flex-wrap:wrap}
-.hero-left{flex:1;min-width:280px}
-.hero h1{font-size:38px;color:#234d3c;line-height:1.1}
-.hero img{flex:1;min-width:280px;width:100%;max-width:500px;height:380px;object-fit:cover;border-radius:20px}
-.section{padding:50px 0;background:white}
-.cards{display:flex;gap:20px;flex-wrap:wrap;justify-content:center}
-.card{width:320px;background:white;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.08);border:1px solid #eee}
-.card img{width:100%;height:210px;object-fit:cover;display:block}
-.card-body{padding:16px}
-.tag{background:#ffefe6;color:#f28a45;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700}
-footer{background:#234d3c;color:#dbe8df;padding:30px 0;text-align:center;margin-top:40px}
-footer a{color:#ffdab3;text-decoration:none;margin:0 8px}
-#recipeBox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:99}
-#recipeBox .inner{background:white;max-width:500px;width:90%;margin:80px auto;border-radius:18px;padding:22px;position:relative}
-</style>
-</head>
-<body>
-<header><div class="wrap nav"><div class="logo">🍴 Foodie Corner</div><div class="menu"><a href="#">Home</a><a href="#recipes">Recipes</a><a class="btn" href="#recipes">Explore</a></div></div></header>
-
-<div class="wrap hero">
-<div class="hero-left"><p style="color:#f28a45;font-weight:800">MAKE EVERY MEAL DELICIOUS</p><h1>Simple, Fresh & Tasty Recipes</h1><a class="btn" href="#recipes">Explore Recipes</a></div>
-<img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800&q=80&auto=format&fit=crop" alt="hero">
-</div>
-
-<section class="section" id="recipes"><div class="wrap"><h2 style="text-align:center;color:#234d3c">Our Top Recipes</h2><div class="cards">
-
-<div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">20 min</span><h3>Creamy White Pasta</h3><button class="btn" onclick="openR('Creamy White Pasta','20 min','Pasta 200g\nMilk 1 cup\nCheese 50g\nGarlic, salt, pepper\n\nBoil pasta, make white sauce with milk & cheese, mix.')">View Recipe</button></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">15 min</span><h3>Cheese Pizza</h3><button class="btn" onclick="openR('Cheese Pizza','15 min','Pizza base\nCheese 100g\nSauce, veggies, oregano\n\nSpread sauce, add cheese, bake 10 min.')">View Recipe</button></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">10 min</span><h3>Fresh Salad</h3><button class="btn" onclick="openR('Fresh Salad','10 min','Lettuce, Cucumber, Tomato\nOlive oil, Lemon, Salt\n\nCut all veggies, add lemon & oil.')">View Recipe</button></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">10 min</span><h3>Berry Dessert</h3><button class="btn" onclick="openR('Berry Dessert','10 min','Mixed berries 1 cup\nHoney 1 tbsp\nMint\n\nMix berries with honey, serve chilled.')">View Recipe</button></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">25 min</span><h3>Veggie Sandwich</h3><button class="btn" onclick="openR('Veggie Sandwich','25 min','Bread 4 slices\nVeggies, Cheese slice\nMayo, Ketchup\n\nAdd veggies & cheese in bread, toast it.')">View Recipe</button></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">15 min</span><h3>Fluffy Pancakes</h3><button class="btn" onclick="openR('Fluffy Pancakes','15 min','Flour 1 cup\nMilk half cup\n1 Egg, Honey, Butter\n\nMix batter, cook on pan, add honey.')">View Recipe</button></div></div>
-
-</div></div></section>
-
-<footer><div class="wrap"><p>© 2026 Foodie Corner</p><p><a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p></div></footer>
-
-<div id="recipeBox"><div class="inner"><span style="position:absolute;top:10px;right:15px;font-size:28px;cursor:pointer" onclick="closeR()">&times;</span><h2 id="rTitle"></h2><p id="rTime" class="tag"></p><p id="rDesc" style="background:#fffff1;padding:15px;border-radius:12px;white-space:pre-line"></p></div></div>
-
 <script>
 function openR(t,ti,d){document.getElementById('rTitle').innerText=t;document.getElementById('rTime').innerText=ti;document.getElementById('rDesc').innerText=d;document.getElementById('recipeBox').style.display='block';}
 function closeR(){document.getElementById('recipeBox').style.display='none';}
 </script>
 </body>
-</html>
 </html>
