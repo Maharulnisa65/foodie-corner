@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Foodie Corner | Easy Recipes</title>
 <style>
-:root { --green:#234d3c; --cream:#fffaf1; --muted:#68766a; --orange:#f28a45; }
-* { box-sizing:border-box; }
+:root { --green:#234d3c; --cream:#fffff1; --muted:#68766a; --orange:#f28a45; }
+* { box-sizing:border-box }
 body { margin:0; font-family:Arial, sans-serif; background:var(--cream); line-height:1.6; }
 a { text-decoration:none; color:inherit; }
-.wrap { width:min(1120px, 92%); margin:auto; }
+.wrap { min-width:1120px; width:92%; margin:auto; }
 header { background:var(--cream); position:sticky; top:0; z-index:10; border-bottom:1px solid #eee; }
 .nav { display:flex; justify-content:space-between; padding:12px 0; align-items:center; }
 .logo { font-weight:800; color:var(--green); font-size:22px; }
@@ -25,30 +25,43 @@ header { background:var(--cream); position:sticky; top:0; z-index:10; border-bot
 .card { width:320px; background:white; border-radius:18px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.08); }
 .card img { width:100%; height:210px; object-fit:cover; }
 .card-body { padding:16px; }
-.tag { background:#fff1e6; color:var(--orange); padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700; }
+.tag { background:#ffefe6; color:var(--orange); padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700; }
 footer { background:var(--green); color:#dbe8df; padding:30px 0; text-align:center; margin-top:40px; }
-#recipeBox{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.65); z-index:9999; justify-content:center; align-items:center; padding:15px}
-#recipeBox .inner{background:white; max-width:520px; width:100%; border-radius:18px; padding:22px; max-height:90vh; overflow:auto; position:relative;}
+#recipeBox{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.65); z-index:99}
+#recipeBox .inner{background:white; max-width:520px; width:90%; margin:100px auto; border-radius:18px; padding:22px; max-height:90vh; overflow:auto; position:relative}
 #rDesc{background:var(--cream); padding:15px; border-radius:12px; white-space:pre-line; line-height:1.8}
-@media(max-width:800px){ .hero{grid-template-columns:1fr} .hero h1{font-size:28px} }
+@media(max-width:800px){ .hero{grid-template-columns:1fr} .hero h1{font-size:28px} .wrap{min-width:auto} }
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><div class="logo">🍴 Foodie Corner</div><div class="menu"><a href="#home">Home</a><a href="#recipes">Recipes</a><a href="#about">About</a><a class="btn" href="#recipes">Explore</a></div></div></header>
-<div class="wrap hero" id="home"><div><p style="color:var(--orange); font-weight:800;">MAKE EVERY MEAL DELICIOUS</p><h1>Easy, Tasty Recipes for Everyday Life</h1><p>Discover quick meals, healthy salads, and sweet treats made with love.</p><br><a class="btn" href="#recipes">Explore Recipes ↓</a></div><img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800"></div>
+<header><div class="wrap nav"><div class="logo">🍴 Foodie Corner</div><div class="menu"><a href="#">Home</a><a href="#recipes">Recipes</a><a href="#about">About</a><a class="btn" href="#recipes">Explore</a></div></div></header>
+
+<div class="wrap hero" id="home"><div><p style="color:var(--orange); font-weight:800;">MAKE EVERY MEAL DELICIOUS</p><h1>Simple, Fresh & Tasty Recipes For Everyone</h1><p>Discover easy-to-make, delicious recipes that will make your family and friends happy.</p><br><a class="btn" href="#recipes">Explore Recipes</a></div><div><img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800"></div></div>
+
 <section class="section" id="recipes" style="background:white;"><div class="wrap"><h2>Our Top Recipes</h2><div class="cards">
-<div class="card"><img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600"><div class="card-body"><h3>Chicken Biryani</h3><p>Spicy, aromatic and full of flavor.</p><div style="display:flex; justify-content:space-between; margin-top:10px;"><span class="tag">45 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Chicken Biryani','45 min','اجزاء:\n• چکن 500 گرام\n• چاول 2 کپ\n• دہی 1 کپ\n• بریانی مصالحہ 2 چمچ\n\nترکیب:\n1. چکن کو دہی اور مصالحے میں 30 منٹ میرینیٹ کریں\n2. چاول آدھے ابال لیں\n3. پیاز براؤن کرکے چکن بھونیں\n4. تہہ لگا کر 15 منٹ دم پر رکھیں')">View</button></div></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600"><div class="card-body"><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta.</p><div style="display:flex; justify-content:space-between; margin-top:10px;"><span class="tag">20 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Creamy White Pasta','20 min','پاستا 200 گرام ابال لیں، مکھن میں میدہ، دودھ اور چیز سے ساس بنائیں، مکس کریں')">View</button></div></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600"><div class="card-body"><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon dressing.</p><div style="display:flex; justify-content:space-between; margin-top:10px;"><span class="tag">10 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Fresh Garden Salad','10 min','کھیرا، ٹماٹر، پیاز، بند گوبھی کاٹ کر لیموں اور چاٹ مصالحہ ڈالیں')">View</button></div></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600"><div class="card-body"><h3>Chocolate Cake</h3><p>Soft, moist chocolate cake.</p><div style="display:flex; justify-content:space-between; margin-top:10px;"><span class="tag">60 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Chocolate Cake','60 min','میدہ 1 کپ، کوکو پاؤڈر آدھا کپ، انڈے 2، چینی 1 کپ مکس کرکے 35 منٹ بیک کریں')">View</button></div></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600"><div class="card-body"><h3>Aloo Paratha</h3><p>Desi style stuffed paratha.</p><div style="display:flex; justify-content:space-between; margin-top:10px;"><span class="tag">25 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Aloo Paratha','25 min','آلو ابال کر مصالحہ بھر کر آٹے میں بند کریں، بیل کر گھی میں سینکیں')">View</button></div></div></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600"><div class="card-body"><h3>Fluffy Pancakes</h3><p>Golden pancakes with honey.</p><div style="display:flex; justify-content:space-between; margin-top:10px;"><span class="tag">15 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Fluffy Pancakes','15 min','میدہ 1 کپ، دودھ 1 کپ، انڈہ 1، چینی 2 چمچ کا گھول بنا کر توے پر بنائیں')">View</button></div></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600"><div class="card-body"><span class="tag">20 min</span><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta</p><button class="btn" onclick="openR('Creamy White Pasta','20 min','Pasta 200g\nMilk 1 cup\nCheese 50g\nGarlic, salt')">View Recipe</button></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600"><div class="card-body"><span class="tag">15 min</span><h3>Cheese Pizza</h3><p>Delicious cheese burst pizza</p><button class="btn" onclick="openR('Cheese Pizza','15 min','Pizza base\nCheese 100g\nTomato sauce\nVeggies')">View Recipe</button></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600"><div class="card-body"><span class="tag">10 min</span><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon</p><button class="btn" onclick="openR('Fresh Garden Salad','10 min','Lettuce\nCucumber\nTomato\nLemon juice 1 tbsp\nOlive oil')">View Recipe</button></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600"><div class="card-body"><span class="tag">10 min</span><h3>Berry Dessert</h3><p>Sweet and fresh berries</p><button class="btn" onclick="openR('Berry Dessert','10 min','Mixed berries 1 cup\nHoney 1 tbsp\nMint')">View Recipe</button></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1525351484163-752941ab87c?w=600"><div class="card-body"><span class="tag">25 min</span><h3>Veggie Sandwich</h3><p>Fresh and healthy sandwich</p><button class="btn" onclick="openR('Veggie Sandwich','25 min','Bread 4 slices\nVeggies\nMayo')">View Recipe</button></div></div>
+
+<div class="card"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600"><div class="card-body"><span class="tag">15 min</span><h3>Fluffy Pancakes</h3><p>Soft fluffy pancakes</p><button class="btn" onclick="openR('Fluffy Pancakes','15 min','Flour 1 cup\nMilk\nEgg\nHoney')">View Recipe</button></div></div>
+
 </div></div></section>
-<section class="section" id="about"><div class="wrap" style="text-align:center; max-width:700px;"><h2>About Foodie Corner</h2><p style="color:var(--muted);">This website is made with ❤️ by Maha.</p></div></section>
-<footer><div class="wrap"><p>© 2026 Foodie Corner — Made by Maharulnisa65</p></div></footer>
-<div id="recipeBox"><div class="inner"><span style="position:absolute; top:10px; right:15px; font-size:28px; cursor:pointer;" onclick="closeR()">&times;</span><h2 id="rTitle" style="color:var(--green); margin:0"></h2><p><b>وقت: </b><span id="rTime"></span></p><p id="rDesc"></p><button class="btn" style="width:100%; margin-top:12px; padding:12px" onclick="closeR()">بند کریں</button></div></div>
+
+<section class="section" id="about"><div class="wrap" style="text-align:center; max-width:700px;"><h2>About Foodie Corner</h2><p style="color:var(--muted)">Foodie Corner is your daily dose of easy and delicious recipes. Made with love by Maharun Nisa to make your kitchen life easier.</p></div></section>
+
+<footer><div class="wrap"><p>© 2026 Foodie Corner - Made by Maharun Nisa 65</p><p style="margin-top:10px;"><a href="privacy.html" style="color:#ffdab3; margin:0 10px; font-weight:700;">Privacy Policy</a> | <a href="contact.html" style="color:#ffdab3; margin:0 10px; font-weight:700;">Contact Us</a> | <a href="sitemap.xml" style="color:#ffdab3; margin:0 10px;">Sitemap</a></p></div></footer>
+
+<div id="recipeBox"><div class="inner"><span style="position:absolute; top:10px; right:15px; font-size:28px; cursor:pointer" onclick="closeR()">&times;</span><h2 id="rTitle"></h2><p id="rTime" class="tag"></p><p id="rDesc"></p></div></div>
+
 <script>
-function openR(t,ti,d){document.getElementById('rTitle').innerText=t; document.getElementById('rTime').innerText=ti; document.getElementById('rDesc').innerText=d; document.getElementById('recipeBox').style.display='flex';}
+function openR(t,ti,d){document.getElementById('rTitle').innerText=t; document.getElementById('rTime').innerText=ti; document.getElementById('rDesc').innerText=d; document.getElementById('recipeBox').style.display='block';}
 function closeR(){document.getElementById('recipeBox').style.display='none';}
 </script>
 </body>
