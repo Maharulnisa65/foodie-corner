@@ -3,65 +3,167 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foodie Corner - Easy Tasty Recipes</title>
+<title>Foodie Corner</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#fffaf0;color:#1a3d2e}
+body{margin:0;font-family:Arial;background:#fffaf0}
 .wrap{width:92%;max-width:1100px;margin:auto}
-header{background:#fffaf0;display:flex;justify-content:space-between;align-items:center;padding:12px 5%;border-bottom:1px solid #eee}
+header{display:flex;justify-content:space-between;padding:14px 5%;background:#fffaf0;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
 .logo{font-weight:900}
-.nav a{margin-left:12px;text-decoration:none;color:#4a6b5a;font-size:14px}
-.btn{background:#ff8c3a;color:#fff;padding:8px 16px;border-radius:20px;border:none;font-weight:700;text-decoration:none;cursor:pointer}
-.hero{display:flex;gap:20px;align-items:center;padding:30px 5%;flex-wrap:wrap;background:#fffaf0}
+.btn{background:#ff8c3a;color:#fff;padding:9px 16px;border-radius:20px;border:none;font-weight:700;cursor:pointer;text-decoration:none}
+.hero{display:flex;gap:20px;align-items:center;padding:30px 5%;flex-wrap:wrap}
 .hero-left{flex:1;min-width:260px}
-.hero h1{font-size:32px;line-height:1.1;margin:8px 0}
-.hero img{flex:1;min-width:260px;width:100%;height:300px;object-fit:cover;border-radius:18px}
-.section{padding:30px 5%}
-.cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-.card{width:48%;min-width:150px;max-width:300px;background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eee;box-shadow:0 4px 12px rgba(0,0,0,0.05)}
-.card img{width:100%;height:160px;object-fit:cover;display:block}
-.card-body{padding:10px}
-.card h3{font-size:14px;margin:5px 0}
-.card p{font-size:11px;color:#6b7d6f;margin:4px 0 8px}
-.tag{background:#fff0e0;color:#ff8c3a;padding:3px 8px;border-radius:12px;font-size:10px;font-weight:700}
-#pop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99;padding:20px}
-#pop .box{background:#fff;max-width:400px;margin:80px auto;padding:20px;border-radius:16px}
+.hero h1{font-size:32px;line-height:1.1}
+.hero-img{flex:1;min-width:260px;width:100%;height:300px;object-fit:cover;border-radius:18px;display:block}
+.cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;padding:30px 5%;background:#fff}
+.card{width:48%;max-width:340px;min-width:160px;background:#fff;border:1px solid #eee;border-radius:16px;overflow:hidden}
+.card img{width:100%;height:190px;object-fit:cover;display:block}
+.card-body{padding:12px}
+.tag{background:#fff0e0;color:#ff8c3a;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:700}
+.pop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:99;padding:16px;overflow-y:auto}
+.pop .box{background:#fffff1;max-width:500px;margin:30px auto;padding:22px;border-radius:18px;position:relative}
+.pre{white-space:pre-line;font-size:13px;line-height:1.7;background:#fff;padding:14px;border-radius:12px;border:1px solid #eee}
+.hide{display:none}
 @media(max-width:600px){.card{width:100%}}
 </style>
 </head>
 <body>
-<header><div class="logo">🍴 Foodie Corner</div><div class="nav"><a href="#">Home</a><a href="#recipes">Recipes</a><a href="#">About</a><a class="btn">Explore</a></div></header>
+
+<header>
+<div class="logo">🍴 Foodie Corner</div>
+<a class="btn" href="#recipes">Explore</a>
+</header>
 
 <div class="hero">
 <div class="hero-left">
-<p style="color:#ff8c3a;font-size:11px;font-weight:800;margin:0">MAKE EVERY MEAL DELICIOUS</p>
+<p style="color:#ff8c3a;font-weight:800;font-size:11px">MAKE EVERY MEAL DELICIOUS</p>
 <h1>Easy, Tasty Recipes for Everyday Life</h1>
-<p style="font-size:13px;color:#6b7d6f">Discover quick meals, healthy salads, and sweet treats made with love.</p>
-<a class="btn" href="#recipes">Explore Recipes</a>
+<p style="color:#6b7d6f;font-size:13px">View پر کلک کریں، پوری ریسپی کھلے گی۔</p>
 </div>
-<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80&auto=format&fit=crop">
+<img class="hero-img" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80&auto=format&fit=crop">
 </div>
 
-<div class="section" id="recipes">
-<h2 style="text-align:center">Our Top Recipes</h2>
-<p style="text-align:center;color:#7a8a7d;font-size:12px;margin-top:0">Real photos, handpicked for you</p>
-<div class="cards">
+<div id="recipes" class="cards">
 
-<div class="card"><img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=80&auto=format&fit=crop"><div class="card-body"><h3>Chicken Biryani</h3><p>Spicy, aromatic and full of flavor. Ready in 45 mins.</p><div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">45 min</span><button class="btn" onclick="openR('Chicken Biryani')">View</button></div></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&auto=format&fit=crop"><div class="card-body"><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta with mushrooms.</p><div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">20 min</span><button class="btn" onclick="openR('Creamy White Pasta')">View</button></div></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600&q=80&auto=format&fit=crop"><div class="card-body"><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon dressing.</p><div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">10 min</span><button class="btn" onclick="openR('Fresh Garden Salad')">View</button></div></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80&auto=format&fit=crop"><div class="card-body"><h3>Chocolate Cake</h3><p>Soft, moist chocolate cake.</p><div style="display:flex;justify-content:space-between;align-items:center"><span class="tag">60 min</span><button class="btn" onclick="openR('Chocolate Cake')">View</button></div></div></div>
-
+<div class="card">
+<img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=80&auto=format&fit=crop">
+<div class="card-body">
+<h3>Chicken Biryani</h3>
+<span class="tag">45 min</span>
+<br><br>
+<button class="btn" onclick="openR('biryani')">View</button>
 </div>
 </div>
 
-<div id="pop" onclick="closeR()"><div class="box" onclick="event.stopPropagation()"><h3 id="rt"></h3><p id="rd" style="font-size:13px;color:#555">Full recipe with ingredients coming soon!</p><button class="btn" onclick="closeR()" style="margin-top:10px">Close</button></div></div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&auto=format&fit=crop">
+<div class="card-body">
+<h3>Creamy White Pasta</h3>
+<span class="tag">20 min</span>
+<br><br>
+<button class="btn" onclick="openR('pasta')">View</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&q=80&auto=format&fit=crop">
+<div class="card-body">
+<h3>Fresh Garden Salad</h3>
+<span class="tag">10 min</span>
+<br><br>
+<button class="btn" onclick="openR('salad')">View</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80&auto=format&fit=crop">
+<div class="card-body">
+<h3>Chocolate Cake</h3>
+<span class="tag">60 min</span>
+<br><br>
+<button class="btn" onclick="openR('cake')">View</button>
+</div>
+</div>
+
+</div>
+
+<!-- POPUP -->
+<div id="pop" class="pop" onclick="closeR()">
+<div class="box" onclick="event.stopPropagation()">
+<span onclick="closeR()" style="position:absolute;top:10px;right:16px;font-size:24px;cursor:pointer">x</span>
+<h2 id="rt"></h2>
+<div id="rd" class="pre"></div>
+<button class="btn" onclick="closeR()" style="width:100%;margin-top:12px">Close</button>
+</div>
+</div>
+
+<!-- RECIPES DATA IN HTML (NOT IN SCRIPT) -->
+<div class="hide">
+<div id="biryani">
+Chicken Biryani - 45 min
+
+Ajza:
+Chawal 2 cup, Chicken adha kilo, Dahi adha cup, Biryani masala 2 chamach, Pyaz 2, Tamatar 2, Hari mirch, Dhania
+
+Tareeqa:
+1. Chawal 30 min bhigo dein.
+2. Pyaz brown kar ke chicken, dahi, masala dal kar bhoon lein.
+3. Chawal alag ubal lein.
+4. Degchi me teh lagayen - chawal, salan, dhania.
+5. 15 min dum par rakhen.
+</div>
+
+<div id="pasta">
+Creamy White Pasta - 20 min
+
+Ajza:
+Pasta 200 gram, Doodh 1 cup, Cheese 50 gram, Lehsan 1 chamach, Makhan 1 chamach, Namak, Kali mirch
+
+Tareeqa:
+1. Pasta ubal lein.
+2. Makhan me lehsan bhonen, doodh aur cheese dal kar sauce banayen.
+3. Pasta dal kar mix karen.
+</div>
+
+<div id="salad">
+Fresh Garden Salad - 10 min
+
+Ajza:
+Salad patta, Kheera 1, Tamatar 1, Gajar 1, Lemon 1, Zaitoon ka tail 1 chamach, Namak
+
+Tareeqa:
+1. Sab sabziyan bareek kaat lein.
+2. Lemon ka ras aur tail dal kar mix karen.
+3. Thanda kar ke pesh karen.
+</div>
+
+<div id="cake">
+Chocolate Cake - 60 min
+
+Ajza:
+Maida 1 cup, Cheeni adha cup, Cocoa powder 3 chamach, 2 anday, Doodh adha cup, Makhan 50 gram
+
+Tareeqa:
+1. Anday aur cheeni achi tarah phent lein.
+2. Maida, cocoa, doodh, makhan dal kar batter banayen.
+3. 180 degree par 40 min bake karen.
+</div>
+</div>
 
 <script>
-function openR(t){document.getElementById('rt').innerText=t;document.getElementById('pop').style.display='block';}
-function closeR(){document.getElementById('pop').style.display='none';}
+function openR(id){
+var t=document.getElementById(id);
+document.getElementById('rt').innerText=t.innerText.split('\n')[0];
+document.getElementById('rd').innerText=t.innerText;
+document.getElementById('pop').style.display='block';
+}
+function closeR(){
+document.getElementById('pop').style.display='none';
+}
 </script>
+
 </body>
-</html>
+</html><footer style="background:#1a3d2e;color:#fff;padding:24px;text-align:center;margin-top:20px;border-radius:18px 18px 0 0">
+<p style="margin:0;font-weight:700">🍴 Foodie Corner</p>
+<p style="font-size:12px;color:#a8c4b0;margin:6px 0">Easy, tasty recipes for everyday cooking</p>
+<p style="font-size:11px;color:#7da68a;margin-top:10px">Made with ❤️ by Maharulnisa</p>
+</footer>
