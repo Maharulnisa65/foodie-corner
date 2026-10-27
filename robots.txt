@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maharulnisa65.github.io/foodie-corner/sitemap.xml
