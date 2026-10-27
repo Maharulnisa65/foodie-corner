@@ -32,6 +32,14 @@ header { background:var(--cream); position:sticky; top:0; z-index:10; border-bot
 .card-body .meta { margin-top:10px; display:flex; justify-content:space-between; align-items:center; }
 .tag { background:#fff1e6; color:var(--orange); padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700; }
 footer { background:var(--green); color:#dbe8df; padding:30px 0; text-align:center; margin-top:40px; }
+
+/* --- POPUP CSS --- */
+#recipeBox{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.65); z-index:9999; justify-content:center; align-items:center; padding:15px}
+#recipeBox .inner{background:white; max-width:520px; width:100%; border-radius:18px; padding:22px; max-height:90vh; overflow:auto; position:relative; animation:pop 0.3s ease}
+@keyframes pop{from{transform:scale(0.9); opacity:0} to{transform:scale(1); opacity:1}}
+.close{position:absolute; top:10px; right:15px; font-size:28px; cursor:pointer; color:var(--muted)}
+#rDesc{line-height:1.8; background:var(--cream); padding:15px; border-radius:12px; white-space:pre-line; margin-top:10px}
+
 @media(max-width:800px){ 
   .nav { flex-wrap:nowrap; }
   .menu { gap:10px; font-size:14px; }
@@ -71,27 +79,27 @@ footer { background:var(--green); color:#dbe8df; padding:30px 0; text-align:cent
 <div class="cards">
 <div class="card">
 <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600" alt="Biryani">
-<div class="card-body"><h3>Chicken Biryani</h3><p>Spicy, aromatic and full of flavor. Ready in 45 mins.</p><div class="meta"><span class="tag">45 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+<div class="card-body"><h3>Chicken Biryani</h3><p>Spicy, aromatic and full of flavor. Ready in 45 mins.</p><div class="meta"><span class="tag">45 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Chicken Biryani','45 min','اجزاء:\n• چکن 500 گرام\n• چاول 2 کپ\n• دہی 1 کپ\n• بریانی مصالحہ 2 چمچ\n• پیاز 2، ٹماٹر 2\n\nترکیب:\n1. چکن کو دہی اور مصالحے میں 30 منٹ میرینیٹ کریں\n2. چاول آدھے ابال لیں\n3. پیاز براؤن کرکے چکن بھونیں\n4. تہہ لگا کر 15 منٹ دم پر رکھیں')">View</button></div></div>
 </div>
 <div class="card">
 <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600" alt="Pasta">
-<div class="card-body"><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta with mushrooms.</p><div class="meta"><span class="tag">20 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+<div class="card-body"><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta with mushrooms.</p><div class="meta"><span class="tag">20 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Creamy White Pasta','20 min','اجزاء:\n• پاستا 200 گرام\n• دودھ 1 کپ\n• چیز 50 گرام\n• مکھن 2 چمچ\n\nترکیب:\n1. پاستا ابال لیں\n2. مکھن میں میدہ بھون کر دودھ اور چیز سے ساس بنائیں\n3. پاستا ساس میں مکس کریں')">View</button></div></div>
 </div>
 <div class="card">
 <img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600" alt="Salad">
-<div class="card-body"><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon dressing.</p><div class="meta"><span class="tag">10 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+<div class="card-body"><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon dressing.</p><div class="meta"><span class="tag">10 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Fresh Garden Salad','10 min','اجزاء:\n• کھیرا، ٹماٹر، پیاز\n• بند گوبھی، لیموں\n• چاٹ مصالحہ\n\nترکیب:\nسب سبزیاں باریک کاٹ کر مکس کریں، لیموں اور چاٹ مصالحہ ڈالیں')">View</button></div></div>
 </div>
 <div class="card">
 <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600" alt="Cake">
-<div class="card-body"><h3>Chocolate Cake</h3><p>Soft, moist chocolate cake.</p><div class="meta"><span class="tag">60 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+<div class="card-body"><h3>Chocolate Cake</h3><p>Soft, moist chocolate cake.</p><div class="meta"><span class="tag">60 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Chocolate Cake','60 min','اجزاء:\n• میدہ 1 کپ\n• کوکو پاؤڈر آدھا کپ\n• انڈے 2\n• چینی 1 کپ\n\nترکیب:\nسب اجزاء مکس کرکے 180 ڈگری پر 35 منٹ بیک کریں')">View</button></div></div>
 </div>
 <div class="card">
 <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=600" alt="Paratha">
-<div class="card-body"><h3>Aloo Paratha</h3><p>Desi style stuffed paratha.</p><div class="meta"><span class="tag">25 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+<div class="card-body"><h3>Aloo Paratha</h3><p>Desi style stuffed paratha.</p><div class="meta"><span class="tag">25 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Aloo Paratha','25 min','اجزاء:\n• آلو 3 عدد ابلے ہوئے\n• آٹا 2 کپ\n• ہری مرچ، دھنیا\n\nترکیب:\nآلو میں مصالحہ بھر کر آٹے میں بند کریں، بیل کر گھی میں کرسپی سینکیں')">View</button></div></div>
 </div>
 <div class="card">
 <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600" alt="Pancakes">
-<div class="card-body"><h3>Fluffy Pancakes</h3><p>Golden pancakes with honey.</p><div class="meta"><span class="tag">15 min</span><button class="btn" style="padding:6px 14px;">View</button></div></div>
+<div class="card-body"><h3>Fluffy Pancakes</h3><p>Golden pancakes with honey.</p><div class="meta"><span class="tag">15 min</span><button class="btn" style="padding:6px 14px;" onclick="openR('Fluffy Pancakes','15 min','اجزاء:\n• میدہ 1 کپ\n• دودھ 1 کپ\n• انڈہ 1\n• چینی 2 چمچ\n\nترکیب:\nگھول بنا کر نان اسٹک توے پر چھوٹے پین کیک بنائیں، شہد کے ساتھ پیش کریں')">View</button></div></div>
 </div>
 </div>
 </div>
@@ -102,6 +110,28 @@ footer { background:var(--green); color:#dbe8df; padding:30px 0; text-align:cent
 <p style="color:var(--muted);">This website is made with ❤️ by Maha. Simple recipes anyone can cook at home.</p>
 </div>
 </section>
-<footer><div class="wrap"><p>© 2026 Foodie Corner — Made by Maharulnisa65</p></div></footer>
+<footer><div class="wrap"><p>© 2026 Foodie Corner — Made by Maharulnisa65 | <a href="privacy.html" style="color:var(--orange)">Privacy</a> | <a href="contact.html" style="color:var(--orange)">Contact</a></p></div></footer>
+
+<!-- Recipe Popup -->
+<div id="recipeBox">
+  <div class="inner">
+    <span class="close" onclick="closeR()">&times;</span>
+    <h2 id="rTitle" style="color:var(--green); margin:0"></h2>
+    <p style="margin:5px 0"><b>وقت: </b><span id="rTime"></span></p>
+    <p id="rDesc"></p>
+    <button class="btn" style="width:100%; margin-top:12px; padding:12px" onclick="closeR()">بند کریں</button>
+  </div>
+</div>
+
+<script>
+function openR(title,time,desc){
+  document.getElementById('rTitle').innerText=title;
+  document.getElementById('rTime').innerText=time;
+  document.getElementById('rDesc').innerText=desc;
+  document.getElementById('recipeBox').style.display='flex';
+}
+function closeR(){document.getElementById('recipeBox').style.display='none';}
+</script>
+
 </body>
 </html>
