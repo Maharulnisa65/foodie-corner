@@ -11,7 +11,7 @@ header{background:#fffff1; border-bottom:1px solid #eee; position:sticky; top:0;
 .nav{display:flex; justify-content:space-between; align-items:center; padding:14px 0}
 .logo{font-weight:800; color:#234d3c; font-size:22px}
 .menu a{margin-left:16px; text-decoration:none; color:#68766a; font-weight:600; font-size:15px}
-.btn{background:#f28a45; color:white; padding:10px 18px; border-radius:24px; font-weight:700; text-decoration:none; border:none; cursor:pointer}
+.btn{background:#f28a45; color:white; padding:10px 18px; border-radius:24px; font-weight:700; text-decoration:none; border:none; cursor:pointer; display:inline-block}
 .hero{display:flex; gap:30px; align-items:center; padding:40px 0; flex-wrap:wrap}
 .hero-left{flex:1; min-width:300px}
 .hero h1{font-size:40px; color:#234d3c; margin:10px 0; line-height:1.1}
@@ -26,6 +26,9 @@ header{background:#fffff1; border-bottom:1px solid #eee; position:sticky; top:0;
 .tag{background:#ffefe6; color:#f28a45; padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700}
 footer{background:#234d3c; color:#dbe8df; padding:30px 0; text-align:center; margin-top:40px}
 footer a{color:#ffdab3; text-decoration:none; margin:0 10px; font-weight:700}
+#recipeBox{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.65); z-index:99}
+#recipeBox .inner{background:white; max-width:520px; width:90%; margin:80px auto; border-radius:18px; padding:22px; max-height:90vh; overflow:auto; position:relative}
+#rDesc{background:#fffff1; padding:15px; border-radius:12px; white-space:pre-line; line-height:1.8}
 </style>
 </head>
 <body>
@@ -38,20 +41,10 @@ footer a{color:#ffdab3; text-decoration:none; margin:0 10px; font-weight:700}
 
 <section class="section" id="recipes"><div class="wrap"><h2>Our Top Recipes</h2><div class="cards">
 
-<div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&auto=format&fit=crop" alt="pasta"><div class="card-body"><span class="tag">20 min</span><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta</p><br><a class="btn" href="#">View Recipe</a></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">20 min</span><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta</p><button class="btn" onclick="openR('Creamy White Pasta','20 min','Pasta 200g\nMilk 1 cup\nCheese 50g\nGarlic, salt, pepper\nBoil pasta, make white sauce with milk & cheese, mix it.')">View Recipe</button></div></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&auto=format&fit=crop" alt="pizza"><div class="card-body"><span class="tag">15 min</span><h3>Cheese Pizza</h3><p>Delicious cheese burst pizza</p><br><a class="btn" href="#">View Recipe</a></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">15 min</span><h3>Cheese Pizza</h3><p>Delicious cheese burst pizza</p><button class="btn" onclick="openR('Cheese Pizza','15 min','Pizza base\nCheese 100g\nTomato sauce\nVeggies, oregano\n\nSpread sauce, add cheese & veggies, bake 10 min.')">View Recipe</button></div></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600&q=80&auto=format&fit=crop" alt="salad"><div class="card-body"><span class="tag">10 min</span><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon</p><br><a class="btn" href="#">View Recipe</a></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600&q=80&auto=format&fit=crop"><div class="card-body"><span class="tag">10 min</span><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon</p><button class="btn" onclick="openR('Fresh Garden Salad','10 min','Lettuce, Cucumber, Tomato\nOlive oil, Lemon\nSalt')">View Recipe</button></div></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80&auto=format&fit=crop" alt="berry"><div class="card-body"><span class="tag">10 min</span><h3>Berry Dessert</h3><p>Sweet and fresh berries</p><br><a class="btn" href="#">View Recipe</a></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?w=600&q=80&auto=format&fit=crop" alt="sandwich"><div class="card-body"><span class="tag">25 min</span><h3>Veggie Sandwich</h3><p>Fresh and healthy sandwich</p><br><a class="btn" href="#">View Recipe</a></div></div>
-
-<div class="card"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80&auto=format&fit=crop" alt="pancakes"><div class="card-body"><span class="tag">15 min</span><h3>Fluffy Pancakes</h3><p>Soft fluffy pancakes</p><br><a class="btn" href="#">View Recipe</a></div></div>
-
-</div></div></section>
-
-<footer><div class="wrap"><p>© 2026 Foodie Corner - Made by Maharun Nisa 65</p><p><a href="privacy.html">Privacy Policy</a> | <a href="contact.html">Contact Us</a></p></div></footer>
-</body>
-</html>
+<div class="card"><img src="https://images.unsplash.com/photo-
