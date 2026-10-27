@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Foodie Corner</title>
+<title>Foodie Corner - Easy Tasty Recipes</title>
 <style>
-body{margin:0;font-family:Arial;background:#fffaf0}
-header{display:flex;justify-content:space-between;padding:14px 5%;background:#fffaf0;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
+body{margin:0;font-family:Arial;background:#fffaf0;color:#1a3d2e}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 5%;background:#fffaf0;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
 .logo{font-weight:900}
-.btn{background:#ff8c3a;color:#fff;padding:9px 16px;border-radius:20px;border:none;font-weight:700;cursor:pointer;text-decoration:none}
+.btn{background:#ff8c3a;color:#fff;padding:9px 16px;border-radius:20px;border:none;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+.nav{display:flex;gap:10px;align-items:center}
+.nav a{font-size:12px;color:#1a3d2e;text-decoration:none;font-weight:700}
 .hero{display:flex;gap:20px;align-items:center;padding:30px 5%;flex-wrap:wrap}
 .hero-left{flex:1;min-width:260px}
-.hero h1{font-size:32px;line-height:1.1}
+.hero h1{font-size:32px;line-height:1.1;margin:8px 0}
 .hero-img{flex:1;min-width:260px;width:100%;height:300px;object-fit:cover;border-radius:18px;display:block}
 .cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;padding:30px 5%;background:#fff}
 .card{width:48%;max-width:340px;min-width:160px;background:#fff;border:1px solid #eee;border-radius:16px;overflow:hidden}
@@ -19,9 +21,12 @@ header{display:flex;justify-content:space-between;padding:14px 5%;background:#ff
 .card-body{padding:12px}
 .tag{background:#fff0e0;color:#ff8c3a;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:700}
 .pop{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);z-index:99;padding:16px;overflow-y:auto}
-.pop .box{background:#fffff1;max-width:500px;margin:30px auto;padding:22px;border-radius:18px;position:relative}
+.pop .box{background:#fffff1;max-width:520px;margin:30px auto;padding:22px;border-radius:18px;position:relative}
 .pre{white-space:pre-line;font-size:13px;line-height:1.7;background:#fff;padding:14px;border-radius:12px;border:1px solid #eee}
 .hide{display:none}
+.page{padding:30px 5%;background:#fff;margin-top:10px;border-top:1px solid #f0e0d0}
+.page h2{text-align:center}
+.page p{font-size:13px;line-height:1.8;color:#3d5a4a;max-width:700px;margin:10px auto}
 @media(max-width:600px){.card{width:100%}}
 </style>
 </head>
@@ -29,14 +34,19 @@ header{display:flex;justify-content:space-between;padding:14px 5%;background:#ff
 
 <header>
 <div class="logo">🍴 Foodie Corner</div>
+<div class="nav">
+<a href="#recipes">Recipes</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
 <a class="btn" href="#recipes">Explore</a>
+</div>
 </header>
 
 <div class="hero">
 <div class="hero-left">
-<p style="color:#ff8c3a;font-weight:800;font-size:11px">MAKE EVERY MEAL DELICIOUS</p>
+<p style="color:#ff8c3a;font-weight:800;font-size:11px;margin:0">MAKE EVERY MEAL DELICIOUS</p>
 <h1>Easy, Tasty Recipes for Everyday Life</h1>
-<p style="color:#6b7d6f;font-size:13px">Click View to see full recipe.</p>
+<p style="color:#6b7d6f;font-size:13px">Click View to see full recipe. Made for food lovers.</p>
 </div>
 <img class="hero-img" src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80&auto=format&fit=crop">
 </div>
@@ -85,6 +95,34 @@ header{display:flex;justify-content:space-between;padding:14px 5%;background:#ff
 
 </div>
 
+<!-- ABOUT US -->
+<div id="about" class="page">
+<h2>About Us</h2>
+<p>Welcome to Foodie Corner! My name is Maharulnisa and I started this blog to share easy and tasty recipes for everyday life.</p>
+<p>Our goal is to help busy people, students and new cooks make delicious food at home with simple ingredients. All recipes are tested at home and written in simple language.</p>
+<p>We post new recipes every week. Thank you for visiting Foodie Corner.</p>
+</div>
+
+<!-- CONTACT US -->
+<div id="contact" class="page">
+<h2>Contact Us</h2>
+<p>If you have any question, suggestion or recipe request, feel free to contact us.</p>
+<p style="text-align:center;font-weight:700">Email: maharulnisa65@gmail.com</p>
+<p style="text-align:center">We will reply within 24 hours. We love to hear from our readers.</p>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div id="privacy" class="page">
+<h2>Privacy Policy</h2>
+<p>At Foodie Corner, we respect your privacy. This Privacy Policy explains how we collect and use information.</p>
+<p>1. We use Google AdSense which may use cookies to show ads.</p>
+<p>2. We do not collect personal information unless you email us.</p>
+<p>3. We do not sell or share your data with third parties.</p>
+<p>4. You can disable cookies in your browser settings.</p>
+<p>If you have any question about our privacy policy, please contact us via email.</p>
+</div>
+
+<!-- POPUP -->
 <div id="pop" class="pop" onclick="closeR()">
 <div class="box" onclick="event.stopPropagation()">
 <span onclick="closeR()" style="position:absolute;top:10px;right:16px;font-size:24px;cursor:pointer">x</span>
@@ -94,18 +132,19 @@ header{display:flex;justify-content:space-between;padding:14px 5%;background:#ff
 </div>
 </div>
 
+<!-- RECIPES DATA -->
 <div class="hide">
 <div id="biryani">
 Chicken Biryani - 45 min
 
 Ingredients:
-2 cups Rice, 500g Chicken, 1/2 cup Yogurt, 2 tbsp Biryani Masala, 2 Onions, 2 Tomatoes, Green Chilies, Fresh Coriander
+2 cups Rice, 500g Chicken, 1/2 cup Yogurt, 2 tbsp Biryani Masala, 2 Onions, 2 Tomatoes, Green Chilies, Coriander
 
 Method:
 1. Soak rice for 30 minutes.
-2. Fry onions, add chicken, yogurt and masala and cook.
+2. Fry onions, add chicken, yogurt and masala.
 3. Boil rice separately.
-4. Make layers in pot - rice, chicken curry, coriander.
+4. Make layers - rice, chicken curry, coriander.
 5. Keep on dum for 15 minutes.
 </div>
 
@@ -113,56 +152,28 @@ Method:
 Creamy White Pasta - 20 min
 
 Ingredients:
-200g Pasta, 1 cup Milk, 50g Cheese, 1 tbsp Garlic, 1 tbsp Butter, Salt, Black Pepper
+200g Pasta, 1 cup Milk, 50g Cheese, 1 tbsp Garlic, 1 tbsp Butter, Salt, Pepper
 
 Method:
 1. Boil pasta.
-2. Fry garlic in butter, add milk and cheese to make white sauce.
-3. Add pasta and mix well. Serve hot.
+2. Fry garlic in butter, add milk and cheese to make sauce.
+3. Add pasta and mix. Serve hot.
 </div>
 
 <div id="salad">
 Fresh Garden Salad - 10 min
 
 Ingredients:
-Lettuce, 1 Cucumber, 1 Tomato, 1 Carrot, 1 Lemon, 1 tbsp Olive Oil, Salt
+Lettuce, 1 Cucumber, 1 Tomato, 1 Carrot, 1 Lemon, Olive Oil, Salt
 
 Method:
 1. Chop all vegetables.
-2. Add lemon juice and olive oil and mix.
-3. Serve chilled.
+2. Add lemon juice and olive oil.
+3. Mix and serve chilled.
 </div>
 
 <div id="cake">
 Chocolate Cake - 60 min
 
 Ingredients:
-1 cup Flour, 1/2 cup Sugar, 3 tbsp Cocoa Powder, 2 Eggs, 1/2 cup Milk, 50g Butter
-
-Method:
-1. Beat eggs and sugar well.
-2. Add flour, cocoa, milk and butter to make batter.
-3. Bake at 180 degrees for 40 minutes.
-</div>
-</div>
-
-<script>
-function openR(id){
-var t=document.getElementById(id);
-document.getElementById('rt').innerText=t.innerText.split('\n')[0];
-document.getElementById('rd').innerText=t.innerText;
-document.getElementById('pop').style.display='block';
-}
-function closeR(){
-document.getElementById('pop').style.display='none';
-}
-</script>
-
-<footer style="background:#1a3d2e;color:#fff;padding:24px;text-align:center;margin-top:20px">
-<p style="margin:0;font-weight:700">Foodie Corner</p>
-<p style="font-size:12px;color:#a8c4b0;margin:6px 0">Easy, tasty recipes for everyday cooking</p>
-<p style="font-size:11px;color:#7da68a;margin-top:10px">Made with love by Maharulnisa</p>
-</footer>
-
-</body>
-</html>
+1 cup Flour, 1/2 cup Sugar, 3 tbsp Cocoa Powder, 2 Eggs, 1/2 cup
