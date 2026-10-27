@@ -6,15 +6,13 @@
 <title>Foodie Corner | Easy Recipes</title>
 <style>
 :root { --green:#234d3c; --cream:#fffff1; --muted:#68766a; --orange:#f28a45; }
-* { box-sizing:border-box }
-body { margin:0; font-family:Arial, sans-serif; background:var(--cream); line-height:1.6; }
-a { text-decoration:none; color:inherit; }
-.wrap { min-width:1120px; width:92%; margin:auto; }
+* { box-sizing:border-box } body { margin:0; font-family:Arial,sans-serif; background:var(--cream); }
+.wrap { width:92%; margin:auto; max-width:1200px; }
 header { background:var(--cream); position:sticky; top:0; z-index:10; border-bottom:1px solid #eee; }
 .nav { display:flex; justify-content:space-between; padding:12px 0; align-items:center; }
 .logo { font-weight:800; color:var(--green); font-size:22px; }
 .menu { display:flex; gap:14px; color:var(--muted); font-weight:600; font-size:15px; align-items:center; }
-.btn { background:var(--orange); color:white; padding:10px 18px; border-radius:24px; font-weight:700; border:none; cursor:pointer; }
+.btn { background:var(--orange); color:white; padding:10px 18px; border-radius:24px; font-weight:700; border:none; cursor:pointer; display:inline-block }
 .hero { display:grid; grid-template-columns:1.1fr 0.9fr; gap:20px; align-items:center; padding:40px 0; }
 .hero h1 { font-size:42px; color:var(--green); margin:0; line-height:1.1; }
 .hero p { color:var(--muted); }
@@ -23,43 +21,40 @@ header { background:var(--cream); position:sticky; top:0; z-index:10; border-bot
 .section h2 { text-align:center; color:var(--green); font-size:30px; }
 .cards { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:28px; }
 .card { width:320px; background:white; border-radius:18px; overflow:hidden; box-shadow:0 6px 20px rgba(0,0,0,0.08); }
-.card img { width:100%; height:210px; object-fit:cover; }
+.card img { width:100%; height:210px; object-fit:cover; display:block; background:#f2f2f2 }
 .card-body { padding:16px; }
 .tag { background:#ffefe6; color:var(--orange); padding:4px 10px; border-radius:20px; font-size:12px; font-weight:700; }
 footer { background:var(--green); color:#dbe8df; padding:30px 0; text-align:center; margin-top:40px; }
 #recipeBox{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.65); z-index:99}
-#recipeBox .inner{background:white; max-width:520px; width:90%; margin:100px auto; border-radius:18px; padding:22px; max-height:90vh; overflow:auto; position:relative}
+#recipeBox .inner{background:white; max-width:520px; width:90%; margin:80px auto; border-radius:18px; padding:22px; max-height:90vh; overflow:auto; position:relative}
 #rDesc{background:var(--cream); padding:15px; border-radius:12px; white-space:pre-line; line-height:1.8}
-@media(max-width:800px){ .hero{grid-template-columns:1fr} .hero h1{font-size:28px} .wrap{min-width:auto} }
+@media(max-width:800px){ .hero{grid-template-columns:1fr} .hero h1{font-size:28px} }
 </style>
 </head>
 <body>
 <header><div class="wrap nav"><div class="logo">🍴 Foodie Corner</div><div class="menu"><a href="#">Home</a><a href="#recipes">Recipes</a><a href="#about">About</a><a class="btn" href="#recipes">Explore</a></div></div></header>
 
-<div class="wrap hero" id="home"><div><p style="color:var(--orange); font-weight:800;">MAKE EVERY MEAL DELICIOUS</p><h1>Simple, Fresh & Tasty Recipes For Everyone</h1><p>Discover easy-to-make, delicious recipes that will make your family and friends happy.</p><br><a class="btn" href="#recipes">Explore Recipes</a></div><div><img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800"></div></div>
+<div class="wrap hero"><div><p style="color:var(--orange); font-weight:800;">MAKE EVERY MEAL DELICIOUS</p><h1>Simple, Fresh & Tasty Recipes For Everyone</h1><p>Discover easy-to-make, delicious recipes that will make your family and friends happy.</p><br><a class="btn" href="#recipes">Explore Recipes</a></div><div><img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=800&q=80&auto=format&fit=crop"></div></div>
 
 <section class="section" id="recipes" style="background:white;"><div class="wrap"><h2>Our Top Recipes</h2><div class="cards">
 
-<div class="card"><img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600"><div class="card-body"><span class="tag">20 min</span><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta</p><button class="btn" onclick="openR('Creamy White Pasta','20 min','Pasta 200g\nMilk 1 cup\nCheese 50g\nGarlic, salt')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80&auto=format&fit=crop" alt="White Pasta"><div class="card-body"><span class="tag">20 min</span><h3>Creamy White Pasta</h3><p>Cheesy white sauce pasta</p><button class="btn" onclick="openR('Creamy White Pasta','20 min','Pasta 200g\nMilk 1 cup\nCheese 50g\nGarlic, salt')">View Recipe</button></div></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600"><div class="card-body"><span class="tag">15 min</span><h3>Cheese Pizza</h3><p>Delicious cheese burst pizza</p><button class="btn" onclick="openR('Cheese Pizza','15 min','Pizza base\nCheese 100g\nTomato sauce\nVeggies')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80&auto=format&fit=crop" alt="Cheese Pizza"><div class="card-body"><span class="tag">15 min</span><h3>Cheese Pizza</h3><p>Delicious cheese burst pizza</p><button class="btn" onclick="openR('Cheese Pizza','15 min','Pizza base\nCheese 100g\nTomato sauce\nVeggies')">View Recipe</button></div></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600"><div class="card-body"><span class="tag">10 min</span><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon</p><button class="btn" onclick="openR('Fresh Garden Salad','10 min','Lettuce\nCucumber\nTomato\nLemon juice 1 tbsp\nOlive oil')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1512621776952-a57141f2eefd?w=600&q=80&auto=format&fit=crop" alt="Salad"><div class="card-body"><span class="tag">10 min</span><h3>Fresh Garden Salad</h3><p>Healthy greens with lemon</p><button class="btn" onclick="openR('Fresh Garden Salad','10 min','Lettuce\nCucumber\nTomato\nLemon juice')">View Recipe</button></div></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600"><div class="card-body"><span class="tag">10 min</span><h3>Berry Dessert</h3><p>Sweet and fresh berries</p><button class="btn" onclick="openR('Berry Dessert','10 min','Mixed berries 1 cup\nHoney 1 tbsp\nMint')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80&auto=format&fit=crop" alt="Berry Dessert"><div class="card-body"><span class="tag">10 min</span><h3>Berry Dessert</h3><p>Sweet and fresh berries</p><button class="btn" onclick="openR('Berry Dessert','10 min','Mixed berries 1 cup\nHoney 1 tbsp\nMint')">View Recipe</button></div></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1525351484163-752941ab87c?w=600"><div class="card-body"><span class="tag">25 min</span><h3>Veggie Sandwich</h3><p>Fresh and healthy sandwich</p><button class="btn" onclick="openR('Veggie Sandwich','25 min','Bread 4 slices\nVeggies\nMayo')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1521390188846-e2a3a97453a0?w=600&q=80&auto=format&fit=crop" alt="Veggie Sandwich"><div class="card-body"><span class="tag">25 min</span><h3>Veggie Sandwich</h3><p>Fresh and healthy sandwich</p><button class="btn" onclick="openR('Veggie Sandwich','25 min','Bread 4 slices\nVeggies\nMayo')">View Recipe</button></div></div>
 
-<div class="card"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600"><div class="card-body"><span class="tag">15 min</span><h3>Fluffy Pancakes</h3><p>Soft fluffy pancakes</p><button class="btn" onclick="openR('Fluffy Pancakes','15 min','Flour 1 cup\nMilk\nEgg\nHoney')">View Recipe</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80&auto=format&fit=crop" alt="Pancakes"><div class="card-body"><span class="tag">15 min</span><h3>Fluffy Pancakes</h3><p>Soft fluffy pancakes</p><button class="btn" onclick="openR('Fluffy Pancakes','15 min','Flour 1 cup\nMilk\nEgg\nHoney')">View Recipe</button></div></div>
 
 </div></div></section>
 
-<section class="section" id="about"><div class="wrap" style="text-align:center; max-width:700px;"><h2>About Foodie Corner</h2><p style="color:var(--muted)">Foodie Corner is your daily dose of easy and delicious recipes. Made with love by Maharun Nisa to make your kitchen life easier.</p></div></section>
-
-<footer><div class="wrap"><p>© 2026 Foodie Corner - Made by Maharun Nisa 65</p><p style="margin-top:10px;"><a href="privacy.html" style="color:#ffdab3; margin:0 10px; font-weight:700;">Privacy Policy</a> | <a href="contact.html" style="color:#ffdab3; margin:0 10px; font-weight:700;">Contact Us</a> | <a href="sitemap.xml" style="color:#ffdab3; margin:0 10px;">Sitemap</a></p></div></footer>
+<footer><div class="wrap"><p>© 2026 Foodie Corner - Made by Maharun Nisa 65</p><p style="margin-top:10px;"><a href="privacy.html" style="color:#ffdab3; margin:0 10px; font-weight:700;">Privacy Policy</a> | <a href="contact.html" style="color:#ffdab3; margin:0 10px; font-weight:700;">Contact Us</a></p></div></footer>
 
 <div id="recipeBox"><div class="inner"><span style="position:absolute; top:10px; right:15px; font-size:28px; cursor:pointer" onclick="closeR()">&times;</span><h2 id="rTitle"></h2><p id="rTime" class="tag"></p><p id="rDesc"></p></div></div>
-
 <script>
 function openR(t,ti,d){document.getElementById('rTitle').innerText=t; document.getElementById('rTime').innerText=ti; document.getElementById('rDesc').innerText=d; document.getElementById('recipeBox').style.display='block';}
 function closeR(){document.getElementById('recipeBox').style.display='none';}
